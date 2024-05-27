@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111;
+}
+
+.header-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 5px;
+}
+
+.header-icon:hover {
+    transform: scale(1.2);
+    color: #940000;
+}
+
+.form-container {
+    position: relative;
+    width: 450px;
+    height: 550px;
+    background: transparent;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(15px);
+}
+
+.form-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+    background: transparent;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.login-form {
+    transform: translateX(0);
+    z-index: 2;
+    opacity: 1;
+}
+
+.registration-form {
+    transform: translateX(100%);
+    z-index: 1;
+    opacity: 0;
+}
+
+.form-box h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.remember-forgot {
+    margin: 15px 0 20px; /* Adjusted margins for better spacing */
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Ensure it takes the full width of the form */
+}
+
+.remember-forgot label {
+    display: flex;
+    align-items: center;
+}
+
+.remember-forgot label input {
+    margin-right: 5px;
+}
+
+.remember-forgot a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.input-box input {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 0.9em;
+    color: #fff;
+    padding: 0 5px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 0.9em;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -5px;
+    font-size: 0.7em;
+}
+
+.button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: #fff;
+    color: #000;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.register-link, .login-link {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 0.9em;
+    color: #fff;
+}
+
+.register-link a, .login-link a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 40px;
+}
+
+.wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg, #090d11 0%, #580a14 35%, #fa4750 100%);
+}
+
+.box div {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    background-color: transparent;
+    border: 6px solid rgba(29, 18, 18, 0.8);
+    border-radius: 5%;
+    background-size: cover;
+    background-position: center;
+}
+
+.box div:nth-child(1) {
+    top: 12%;
+    left: 70%;
+    animation: animate 10s linear infinite;
+}
+
+.box div:nth-child(2) {
+    top: 30%;
+    left: 60%;
+    animation: animate 8s linear infinite;
+}
+
+.box div:nth-child(3) {
+    top: 62%;
+    left: 50%;
+    animation: animate 6s linear infinite;
+}
+
+.box div:nth-child(4) {
+    top: 12%;
+    left: 40%;
+    animation: animate 10s linear infinite;
+}
+
+.box div:nth-child(5) {
+    top: 30%;
+    left: 30%;
+    animation: animate 8s linear infinite;
+}
+
+.box div:nth-child(6) {
+    top: 62%;
+    left: 20%;
+    animation: animate 6s linear infinite;
+}
+
+.box div:nth-child(7) {
+    top: 12%;
+    left: 10%;
+    animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0) translateY(0) rotate(0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.3) translateY(-90px) rotate(360deg);
+        opacity: 0;
+    }
+}

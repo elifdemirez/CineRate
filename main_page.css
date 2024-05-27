@@ -1,0 +1,282 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #050928;
+}
+
+header {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    transition: margin-left 0.5s ease; /* Yeni eklenen transition */
+}
+
+header.sidebar-open .logo { /* Kenar çubuğu açıldığında logo'nun stilini değiştir */
+    margin-left: 250px;
+}
+
+.logo {
+    margin-left: 0;
+    transition: margin-left 0.5s ease; /* Yeni eklenen transition */
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin-top: 10px;
+    margin-left: 10px ;
+    
+    
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#profileImage.large {
+    width: 200px;
+    height: 200px;
+    transition: width 0.3s ease, height 0.3s ease;
+    cursor: pointer;
+}
+
+
+
+.profile span {
+    font-size: 16px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    
+    
+        /* Genişliği 300px olarak ayarla */
+    
+    
+}
+
+.search-container input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 600px;
+}
+
+.search-container button {
+    padding: 8px 15px;
+    background-color: #fff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-image: url('buyutec.png'); /* Arka plan görüntüsü ekle */
+    background-repeat: no-repeat; /* Tekrar etmeyi önle */
+    background-position: center; /* Görüntüyü ortala */
+    background-size: 60%; /* Görüntü boyutunu ayarla */
+    transition: background-size 0.3s ease; /* Geçiş efekti ekle */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 10px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+.categories {
+    padding-bottom: 20px;
+    margin-left: 180px;
+}
+
+.categories h2 {
+    margin-bottom: -20px;
+    color: #fff;
+    font-size: 35px;
+    margin-left: -150px;
+}
+
+.categories ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.categories li {
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.film-posters {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px;
+    max-width: calc(100vw - 40px);
+}
+
+.film-posters h2 {
+    margin-bottom: 10px;
+}
+
+.poster-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+    margin-top: 50px;
+    margin-left: 180px;
+}
+
+.poster {
+    display: block;
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+
+.poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.poster:hover {
+    transform: scale(1.05);
+}
+
+.poster:hover img {
+    opacity: 0.8;
+}
+
+.categories .bi-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 1px;
+    margin-right: 30px;
+    font-size: 4rem;
+    color: #2d2a2a;
+}
+
+.categories .bi-list:hover {
+    color: #342a2a;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050928;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #050928;
+    border-radius: 10px;
+    border: 3px solid #050928;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #050928;
+}
+
+::-webkit-scrollbar-corner {
+    background: #050928;
+}
+
+.login-btn {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: 10px;
+}
+
+.login-btn:hover {
+    background-color: #727272;
+    transform: scale(1.05);
+}
+
+.login-btn:active {
+    transform: scale(0.95);
+}

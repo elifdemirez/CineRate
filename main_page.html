@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineRate</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!----> <link rel="stylesheet" href="main_page.css">
+</head>
+<body>
+    <header>
+         <!-- Kenar çubuğunu açma düğmesi -->
+    <button class="openbtn" id="openbtn" onclick="toggleNav()">☰</button>
+
+        <div class="logo">
+            <h1>CineRate</h1>
+        </div>
+        <!-- Arama kutusu -->
+        <div class="search-container">
+            
+            <input type="text" id="searchInput" placeholder="Film ara...">
+            <button onclick="search()">Search</button>
+        
+        </div>
+        <!-- Kullanıcı profili -->
+        <div class="profile" onclick="toggleImageSize()">
+            <img id="profileImage" src="assets/images/profil.jpg" alt="Profil Resmi">
+            <div>
+                 <!-- Kullanıcı adı ve giriş düğmesi -->
+                <span id="profileName" onclick="navigateToProfile()">Please Login</span>
+                <button class="login-btn" onclick="navigateToLogin()">Login</button>
+            </div>
+        </div>
+    </header>
+
+     <!-- Kenar çubuğu -->
+    <div id="mySidebar" class="sidebar">
+    <a href="#Movies in theaters">Movies in theaters</a>
+    <a href="#Fantastic">Fantastic</a>
+    <a href="#Romantic">Romantic</a>
+    <a href="#Comedy">Comedy</a>
+    <a href="#Sci-fi">Sci-fi</a>
+    <a href="#Action">Action</a>
+    </div>
+    
+    <div class="content" id="main">
+      <!-- Kategoriler başlığı -->
+        <div class="categories">
+            <h2>Movies in theaters</h2>
+        </div>
+         <!-- Film afişleri -->
+        <div id="Movies in theaters" class="film-posters">          
+            <a href="#" class="poster" data-movie-id="614933">
+                <img src="assets/images/atlas.jpg" alt="Film Poster 1">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="786892">
+                <img src="assets/images/furiosa.jpg" alt="Film Poster 2">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="882059">
+                <img src="assets/images/boyskillsworld.jpg" alt="Film Poster 3">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="639720">
+                <img src="assets/images/hayaliarkadaslar.jpg" alt="Film Poster 4">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="929590">
+                <img src="assets/images/icsavas.jpg" alt="Film Poster 5">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="986070">
+                <img src="assets/images/beckiningazabi.jpg" alt="Film Poster 6">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="796185">
+                <img src="assets/images/ucsilahsorler.jpg" alt="Film Poster 7">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="970348">
+                <img src="assets/images/umudunukaybetme.jpg" alt="Film Poster 8">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="653346">
+                <img src="assets/images/maymunlar.jpg" alt="Film Poster 9">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="937287">
+                <img src="assets/images/rekabet.jpg" alt="Film Poster 8">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+                            
+        
+                            
+              <!-- Diğer filmler buraya eklenebilir -->
+        </div>      
+                        
+                        
+               
+    
+        <div class="categories">
+            <h2>Fantastic</h2>
+        </div>
+        <div id="Fantastic" class="film-posters">
+            <a href="#" class="poster" data-movie-id="76600">
+                <img src="assets/images/avatar.jpg" alt="Film Poster 9">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="671">
+                <img src="assets/images/hp.jpg" alt="Film Poster 10">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="11">
+                <img src="assets/images/starwars.jpg" alt="Film Poster 11">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="12155">
+                <img src="assets/images/aiice.jpg" alt="Film Poster 12">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="321612">
+                <img src="assets/images/guzelcirkin.jpg" alt="Film Poster 13">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="58">
+                <img src="assets/images/karayip-korsanlari-olu-adamin-sandigi-1660915223.jpg" alt="Film Poster 14">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="337404">
+                <img src="assets/images/cruella.jpg" alt="Film Poster 15">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="353486">
+                <img src="assets/images/jumanji.jpg" alt="Film Poster 16">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="967847">
+                <img src="assets/images/hayaletAvcıları.jpg" alt="Film Poster 16">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+            <a href="#" class="poster" data-movie-id="282035">
+                <img src="assets/images/mumya.jpg" alt="Film Poster 16">
+                <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+            </a>
+        </div>    
+    
+
+     <div class="categories">
+        <h2>Romantic</h2>
+     </div>
+     <div id="Romantic"class="film-posters">
+         <a href="#" class="poster" data-movie-id="296096">
+            <img src="assets/images/sendenonceben.jpg" alt="Film Poster 17">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="11036">
+            <img src="assets/images/NOTEBOOK.jpg" alt="Film Poster 18">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="222935">
+            <img src="assets/images/ayniyildizinaltinda.jpg" alt="Film Poster 19">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="4348">
+            <img src="assets/images/Aşk_ve_Gurur_(2005)_-_film_afişi.jpg" alt="Film Poster 20">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="10934">
+            <img src="assets/images/kizgin-gunes-1660915213.jpg" alt="Film Poster 21">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="11137">
+            <img src="assets/images/prensveben.jpg" alt="Film Poster 22">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="851644">
+            <img src="assets/images/20th.jpg" alt="Film Poster 23">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="19913">
+            <img src="assets/images/askin500gunu.jpg" alt="Film Poster 24">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="43949">
+            <img src="assets/images/flipped.jpg" alt="Film Poster 24">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="122906">
+            <img src="assets/images/zamandaAşk.jpg" alt="Film Poster 24">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+     </div>    
+
+     <div class="categories">
+        <h2>Comedy</h2>
+     </div>
+     <div id="Comedy" class="film-posters">
+         <a href="#" class="poster" data-movie-id="477313">
+            <img src="assets/images/ailearasinda.jpg" alt="Film Poster 25">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="18785">
+            <img src="assets/images/hangover.jpg" alt="Film Poster 26">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="27275">
+            <img src="assets/images/gora-1660915230.jpg" alt="Film Poster 27">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="1137064">
+            <img src="assets/images/Olumlu-Dunya-2-afis.jpg" alt="Film Poster 28">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="31060">
+            <img src="assets/images/Recep-Ivedik-1.jpg" alt="Film Poster 29">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="20453">
+            <img src="assets/images/3-ahmak-1660917429.jpg" alt="Film Poster 30">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="50025">
+            <img src="assets/images/kolpacino.jpg" alt="Film Poster 31">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="30634">
+            <img src="assets/images/Organize_isler.jpg" alt="Film Poster 32">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="13">
+            <img src="assets/images/forrestGump.jpg" alt="Film Poster 32">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="637">
+            <img src="assets/images/hayatGuzeldir.jpg" alt="Film Poster 32">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+     </div>    
+
+     <div class="categories">
+        <h2>Sci-fi</h2>
+     </div>
+     <div id="Sci-fi" class="film-posters">
+         <a href="#" class="poster" data-movie-id="1726">
+            <img src="assets/images/ironman1.jpg" alt="Film Poster 33">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="118340">
+            <img src="assets/images/galaksininkoruyuculari.jpg" alt="Film Poster 34">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="603">
+            <img src="assets/images/matrix.jpg" alt="Film Poster 35">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="157336">
+            <img src="assets/images/interstellar.jpg" alt="Film Poster 36">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="27205">
+            <img src="assets/images/inception.jpg" alt="Film Poster 37">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="76341">
+            <img src="assets/images/madmax.jpg" alt="Film Poster 38">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="299534">
+            <img src="assets/images/endgame.jpg" alt="Film Poster 39">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="72190">
+            <img src="assets/images/savasz.jpg" alt="Film Poster 40">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="693134">
+            <img src="assets/images/dune.jpg" alt="Film Poster 40">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="240832">
+            <img src="assets/images/lucy.jpg" alt="Film Poster 40">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+      </div> 
+
+
+      <div class="categories">
+        <h2>Action</h2>
+     </div>
+     <div id="Action" class="film-posters">
+         <a href="#" class="poster" data-movie-id="9615">
+           <img src="assets/images/tokyo.jpg" alt="Film Poster 41">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="207703">
+            <img src="assets/images/kingsman.jpg" alt="Film Poster 42">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="545609">
+            <img src="assets/images/exxtraction.jpg" alt="Film Poster 43">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="603692">
+            <img src="assets/images/john-wick-4-filmi-sinemalarda-1-afi-68Cn.jpg" alt="Film Poster 44">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="512195">
+            <img src="assets/images/kirmizi-bulten-512195.jpg" alt="Film Poster 45">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="509967">
+            <img src="assets/images/6under.jpg" alt="Film Poster 46">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="10483">
+            <img src="assets/images/Olum_Yarisi_afis.jpg" alt="Film Poster 47">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="27578">
+            <img src="assets/images/Cehennem_Melekleri.jpg" alt="Film Poster 48">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="402900">
+            <img src="assets/images/oceans.jpg" alt="Film Poster 48">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+         <a href="#" class="poster" data-movie-id="996154">
+            <img src="assets/images/blackLotus.jpg" alt="Film Poster 48">
+            <button class="btn btn-sm btn-outline-secondary film-icon" onclick="addToWatchList(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+            </button>
+         </a>
+      </div> 
+    </div>     
+    <script src="main_page.js"></script>
+</body>
+</html>

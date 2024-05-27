@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <!-- Harici CSS dosyasını dahil ediyor -->
+    <link rel="stylesheet" href="authentication.css">
+</head>
+<body>
+    <!-- Sayfa içeriğini saran ana div -->
+    <div class="wrapper">
+        <!-- Arka plandaki resimlerin bulunduğu div -->
+        <div class="box">
+            <div style="background-image: url(assets/images/hp.jpg);"></div>
+            <div style="background-image: url(assets/images/lucy.jpg);"></div>
+            <div style="background-image: url(assets/images/inception.jpg);"></div>
+            <div style="background-image: url(assets/images/interstellar.jpg);"></div>
+            <div style="background-image: url(assets/images/starwars.jpg);"></div>
+            <div style="background-image: url(assets/images/avatar.jpg);"></div>
+            <div style="background-image: url(assets/images/dune.jpg);"></div>
+        </div>
+    </div>
+
+    <!-- Formların bulunduğu ana container -->
+    <div class="form-container">
+        <!-- Giriş formu -->
+        <div class="form-box login-form">
+            <!-- Ana sayfaya yönlendirme ikonu -->
+            <div class="header-icon" onclick="window.location.href='main_page.html'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                </svg>
+            </div>
+            <h2>Login</h2>
+            <!-- Email girişi -->
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                <input id="inUsr" type="email" required>
+                <label>Email</label>
+            </div>
+            <!-- Şifre girişi -->
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input id="inPass" type="password" required>
+                <label>Password</label>
+            </div>
+            <!-- Beni hatırla ve şifremi unuttum seçenekleri -->
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+                <a id="forgotLabel" href="#">Forgot password?</a>
+            </div>
+            <!-- Giriş yap butonu -->
+            <button class="button loginbtn" type="button" value="Login">Login</button>
+            <!-- Kayıt olma linki -->
+            <div class="register-link">
+                <p>Don't have an account? <a id="signupLabel" href="#">Sign up</a></p>
+            </div>
+        </div>
+
+        <!-- Kayıt formu -->
+        <div class="form-box registration-form">
+            <!-- Ana sayfaya yönlendirme ikonu -->
+            <div class="header-icon" onclick="window.location.href='main_page.html'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                </svg>
+            </div>
+            <h2>Sign Up</h2>
+            <!-- İsim girişi -->
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <input id="name" type="text" required>
+                <label>Name</label>
+            </div>
+            <!-- Kullanıcı adı girişi -->
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <input id="username" type="text" required>
+                <label>Username</label>
+            </div>
+            <!-- Email girişi -->
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                <input id="email" type="email" required>
+                <label>Email</label>
+            </div>
+            <!-- Şifre girişi -->
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input id="password" type="password" required>
+                <label>Password</label>
+            </div>
+            <!-- Şifre onay girişi -->
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input id="confirmPassword" type="password" required>
+                <label>Confirm Password</label>
+            </div>
+            <!-- Kayıt ol butonu -->
+            <button class="button signupbtn" type="button" value="Signup">Sign Up</button>
+            <!-- Giriş yapma linki -->
+            <div class="login-link">
+                <p>Already have an account? <a id="loginLabel" href="#">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase ve diğer harici JS dosyalarını dahil ediyor -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script type="module" src="page0.js"></script>
+    <script src="authentication.js"></script>
+</body>
+</html>

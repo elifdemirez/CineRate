@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #050928;
+    color: #e0e0e0;
+}
+.header-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 5px;
+}
+.header-icon:hover {
+    transform: scale(1.2);
+    color: #940000;
+}
+.profile-header {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+.profile-header:hover {
+    transform: scale(1.05);
+}
+.profile-header img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.profile-header h2 {
+    margin-top: 10px;
+    color: #ffffff;
+}
+.signout-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.signout-button:hover {
+    background-color: #c9302c;
+}
+.achievements, .movies-list {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+.achievements:hover, .movies-list:hover {
+    transform: scale(1.05);
+}
+.movie-item {
+    margin-right: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.movie-item img {
+    width: 100px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.movie-item img:hover {
+    transform: scale(1.1);
+}
+.comment-item {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+.comment-item img {
+    width: 100px;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+.comment-item:hover {
+    transform: scale(1.02);
+}
+.comment-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.comment-content h5 {
+    margin: 0;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+.comment-content p {
+    margin: 0;
+    margin-bottom: 5px;
+    color: #e0e0e0;
+}
